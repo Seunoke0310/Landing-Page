@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { GiRoundStar } from "react-icons/gi"; // Import the new star icon
+import { GiRoundStar } from "react-icons/gi"; 
 
 const RatingStar = () => {
   const [rating, setRating] = useState(5);

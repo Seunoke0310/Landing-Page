@@ -64,11 +64,12 @@ const StatsShowcase = () => {
           <BsThreeDotsVertical size={16} />
         </div>
         <div className="text-[10px] sm:text-xs font-medium text-gray-800 text-left">
-          <p>Total Projects</p>
+          <p>Total Projects <span className="text-green-500 text-xs">8%</span></p>
           <p className="text-lg sm:text-xl font-bold text-black mt-2">
-            1674+ <span className="text-green-500 text-xs">8%</span>
+            1674+ 
           </p>
-          <p className="text-[10px] text-gray-500 mt-2">Increase of 126 this month</p>
+          <p className="text-[10px] text-gray-500 mt-2">Increase of <span className="text-green-500">
+            126</span> this month</p>
         </div>
       </motion.div>
 
@@ -105,4 +106,3 @@ const StatsShowcase = () => {
 };
 
 export default StatsShowcase;
-
