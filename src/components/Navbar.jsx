@@ -4,7 +4,7 @@ import logo from "../assets/logo.jpeg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navLinks = ["Home", "About", "Services", "Contact"];
+  const navLinks = ["Home", "Workflow", "Services", "Pricing"];
 
   return (
     <motion.nav

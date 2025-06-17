@@ -28,7 +28,7 @@ const StatsShowcase = () => {
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.6 }}
-        className="h-56 w-40 sm:w-40 rounded-xl overflow-hidden"
+        className="h-56 w-full sm:w-40 rounded-xl overflow-hidden"
       >
         <img
           src={Pics1}
@@ -42,7 +42,7 @@ const StatsShowcase = () => {
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="h-48 w-32 sm:w-36 rounded-xl flex items-center justify-center text-center px-2"
+        className="h-48 w-full sm:w-40 rounded-xl flex items-center justify-center text-center px-2"
         style={{ backgroundColor: "#142F32" }}
       >
         <p className="text-xs sm:text-xs font-light text-white">
@@ -57,7 +57,7 @@ const StatsShowcase = () => {
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="bg-white shadow-md h-32 w-24 sm:w-40 rounded-xl px-2 py-2 flex flex-col justify-between"
+        className="bg-white shadow-md h-32 w-24 sm:w-40 rounded-xl px-2 py-2 flex flex-col justify-between hidden sm:block"
       >
         <div className="flex items-center justify-between text-[#142F32]">
           <BsWindowSidebar size={20} />
@@ -78,7 +78,7 @@ const StatsShowcase = () => {
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.6, delay: 0.6 }}
-        className="h-48 w-32 sm:w-36 rounded-xl flex items-center justify-center text-center px-2"
+        className="h-48 w-full sm:w-40 rounded-xl flex items-center justify-center text-center px-2"
         style={{ backgroundColor: "#E3FFCC" }}
       >
         <p className="text-xs sm:text-xs font-normal text-gray-700">
@@ -93,7 +93,7 @@ const StatsShowcase = () => {
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.6, delay: 0.8 }}
-        className="h-56 w-40 sm:w-40 rounded-xl p-5 flex flex-col items-start justify-end"
+        className="h-56 w-full sm:w-40 rounded-xl p-5 flex flex-col items-start justify-end hidden sm:block"
         style={{ backgroundColor: "#142F32" }}
       >
         <MdSentimentVerySatisfied size={24} className="text-white mb-2" />
