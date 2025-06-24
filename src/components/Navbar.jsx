@@ -76,6 +76,7 @@ const Navbar = () => {
       
       {menuOpen && (
         <div className="md:hidden mt-3 space-y-2 px-4">
+          <div className="flex flex-col items-center space-y-4">
           {navLinks.map((link, i) => (
             <a
               key={i}
@@ -91,6 +92,7 @@ const Navbar = () => {
           >
             Sign Up
           </a>
+          </div>
         </div>
       )}
     </motion.nav>

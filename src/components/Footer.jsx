@@ -1,6 +1,7 @@
 import React from "react";
 import { FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { motion } from "framer-motion";
+import lightlogo from "../assets/lightlogo.jpeg";
 
 const Footer = () => {
   return (
@@ -13,7 +14,11 @@ const Footer = () => {
             transition={{ duration: 0.5, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h4 className="text-white text-lg font-bold mb-2">MyLogo</h4>
+            <div className="flex items-center space-x-2">
+                <img src={lightlogo} alt="Logo" className="w-10 h-10 object-contain" />
+                <span className="text-white text-base font-medium mb-2">Shaymast</span>
+              </div>
+            
             <p className="text-gray-400 leading-relaxed">
               Our solution makes production faster and cheaper. Contact us for more information.
             </p>

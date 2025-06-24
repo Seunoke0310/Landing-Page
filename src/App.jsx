@@ -11,12 +11,14 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  return <>
+  return( 
+  <>
   <div className="min-h-screen w-full overflow-x-hidden bg-white">
   {showSplash ? <SplashScreen /> : <HomePage />}
   </div>
   
-  </>;
+  </>
+  );
 
 };
 

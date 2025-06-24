@@ -1,109 +1,117 @@
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { TbBrandProducthunt } from "react-icons/tb";
-import { FiArrowUpRight, FiBox,  FiShield  } from "react-icons/fi";
-import { TiSpanner } from "react-icons/ti";
-import { GoGraph } from "react-icons/go";
-import { FaStarOfLife } from "react-icons/fa6";
-
-const items = [
-  {
-    title: "Smart Automation",
-    iconLeft: <FaStarOfLife size={20} />,
-    iconRight: <FiArrowUpRight size={20} />,
-    description: "Streamline production tasks with precision and minimal downtime.",
-  },
-  {
-    title: "Quality Assurance",
-    iconLeft: <TbBrandProducthunt size={20} />,
-    iconRight: <FiArrowUpRight size={20} />,
-    description: "Ensure each product meets top-tier standards consistently.",
-  },
-  {
-    title: "Rapid Prototyping",
-    iconLeft: <TiSpanner size={20} />,
-    iconRight: <FiArrowUpRight size={20} />,
-    description: "Quickly build and test designs for faster innovation.",
-  },
-  {
-    title: "Integrated Systems",
-    iconLeft: < FiShield  size={20} />,
-    iconRight: <FiArrowUpRight size={20} />,
-    description: "Synchronize operations for smooth and seamless workflows.",
-  },
-  {
-    title: "Equipment Optimization",
-    iconLeft: <FiBox size={20} />,
-    iconRight: <FiArrowUpRight size={20} />,
-    description: "Maximize machinery performance through data-driven decisions.",
-  },
-  {
-    title: "Inventory Control",
-    iconLeft: <GoGraph size={20} />,
-    iconRight: <FiArrowUpRight size={20} />,
-    description: "Monitor stock in real-time for just-in-time manufacturing.",
-  },
-];
-
-
-const fromLeftVariant = {
-  hidden: { opacity: 0, x: -60 },
-  visible: (i = 0) => ({
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.6,
-      delay: i * 0.2,
-      ease: "easeOut",
-    },
-  }),
-};
+import React from "react";
+import { FaCheckCircle } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Workflow = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section ref={ref} className="bg-[#142F32] text-white py-20 px-4 md:px-10">
-      <motion.div
-        className="max-w-6xl mx-auto text-center mb-12"
-        variants={fromLeftVariant}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-      >
-        <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
-          Efficient and Integrated <br />
-          <span>Manufacturing Services</span>
-        </h2>
-        <p className="text-sm sm:text-sm text-gray-200">
-          Simplify operations with our efficient, quality-focused services.
-        </p>
-      </motion.div>
+    <section className="py-20 px-4 md:px-10 bg-white">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+        
+        <motion.div
+          className="bg-gray-100 rounded-xl p-4 w-full max-w-sm mx-auto text-xs"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          viewport={{ once: true }}
+        >
+          <div className="text-gray-600 font-medium mb-1">Total Projects</div>
+          <div className="text-2xl font-bold text-black mb-2">
+            1,475 <span className="text-green-500 text-xs">+8%</span>
+          </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {items.map((item, index) => (
-          <motion.div
-            key={index}
-            custom={index}
-            variants={fromLeftVariant}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="relative bg-white/5 border border-white/10 backdrop-blur-md rounded-xl p-6 text-left shadow-sm"
-          >
-            <div className="flex items-center justify-between mb-4">
-              <div className="text-white">{item.iconLeft}</div>
-              <div className="text-white">{item.iconRight}</div>
+          <hr className="my-3" />
+
+          <div className="space-y-2">
+            {[
+              { label: "Finished", percent: 50, color: "[#142F32]" },
+              { label: "In Progress", percent: 13, color: "[#142F32]" },
+              { label: "Rejected", percent: 30, color: "[#142F32]" },
+            ].map(({ label, percent, color }, i) => (
+              <div key={i}>
+                <div className="flex justify-between text-gray-700 mb-1">
+                  <span>{label}</span>
+                  <span>{percent}%</span>
+                </div>
+                <div className="w-full bg-gray-300 h-2 rounded-full">
+                  <div
+                    className={`h-full bg-${color} rounded-full`}
+                    style={{ width: `${percent}%` }}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <hr className="my-3" />
+
+          <div>
+            <div className="flex justify-between text-gray-700 mb-1">
+              <span>Overall Progress</span>
+              <span>73%</span>
             </div>
-            <h3 className="text-lg font-semibold mb-2 pt-8">{item.title}</h3>
-            <p className="text-sm font-light text-gray-300 leading-relaxed">
-              {item.description}
-            </p>
-          </motion.div>
-        ))}
+            <div className="w-full bg-gray-300 h-2.5 rounded-full">
+              <div className="h-full bg-green-600 rounded-full w-[73%]"></div>
+            </div>
+          </div>
+
+          <div className="flex justify-between items-end gap-1 mt-4 h-14">
+            {[60, 40, 80, 30, 70, 90, 50].map((height, i) => (
+              <div
+                key={i}
+                className="bg-[#142F32] rounded w-1.5"
+                style={{ height: `${height}%` }}
+              ></div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="space-y-6"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-xl font-semibold text-black">
+            Why Choose Our Platform?
+          </h2>
+          <p className="text-sm text-gray-600 leading-relaxed">
+            We simplify your workflow, empower your decisions, and accelerate growth with intelligent tools and reliable insights.
+          </p>
+
+          <div className="space-y-4">
+            {[
+              {
+                title: "Smart Analytics",
+                desc: "Our dashboards help you analyze your data and reveal powerful insights to make informed decisions.",
+              },
+              {
+                title: "Reliable Performance",
+                desc: "Lightning-fast load times and stable uptime to keep your work uninterrupted across all environments.",
+              },
+              {
+                title: "Seamless Collaboration",
+                desc: "Work together in real time, regardless of department or location, for better productivity and outcomes.",
+              },
+            ].map((item, i) => (
+              <div key={i}>
+                <h5 className="inline-flex items-center gap-2 font-semibold text-sm text-black mb-1">
+                  <FaCheckCircle className="text-[#142F32]" />
+                  {item.title}
+                </h5>
+                <p className="text-xs text-gray-600 leading-snug max-w-md">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default Workflow;
+
+
 
