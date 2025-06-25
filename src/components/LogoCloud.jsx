@@ -21,7 +21,7 @@ const getCirclePosition = (radiusPercent, count) => {
   return positions;
 };
 
-const Logocloud = () => {
+const LogoCloud = () => {
   //  positions to keep logos in a fixed position
   const positions = useMemo(() => {
     const outer = getCirclePosition(35, 4);
@@ -113,6 +113,4 @@ const Logocloud = () => {
   );
 };
 
-export default Logocloud;
-
-
+export default LogoCloud;
