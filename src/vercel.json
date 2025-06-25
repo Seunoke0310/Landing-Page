@@ -1,9 +1,11 @@
 
 {
-  "buildCommand": "npm ci && npm run build",
+  "buildCommand": "rm -rf node_modules package-lock.json && npm install && npm run build",
+  "nodeVersion": "18.x",
   "functions": {
     "app/**/*": {
       "runtime": "nodejs18.x"
     }
-  }
+  },
+  "installCommand": "npm install --force"
 }
