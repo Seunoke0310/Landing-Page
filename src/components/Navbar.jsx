@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import logo from "../assets/logo.jpeg";
+import Logo from "../assets/Logo.jpeg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         <div className="flex items-center space-x-2">
-          <img src={logo} alt="Logo" className="w-10 h-10 object-contain" />
+          <img src={Logo} alt="Logo" className="w-10 h-10 object-contain" />
           <span className="font-medium text-base">Shaymast</span>
         </div>
 
