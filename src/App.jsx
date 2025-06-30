@@ -3,6 +3,7 @@ import SplashScreen from "./components/SplashScreen";
 import HomePage from "./pages/Home"; 
 
 
+
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
 

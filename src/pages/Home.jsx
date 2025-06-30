@@ -6,6 +6,7 @@ import LogoCloud from "../components/LogoCloud";
 import MildSection from "../components/MildSection";
 import Footer from "../components/Footer";
 import Services from "../components/Services";
+import '../App.css';
 
 const HomePage = () => {
   return (
